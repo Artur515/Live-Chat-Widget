@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.open_button {
+    border: 0;
+    position: absolute;
+    bottom: 0;
+    right: 35px;
+    background: #d3d3d3;
+    padding: 10px 35px;
+    border-radius: 1px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: linear 0.2s;
+}
+
+.open_button:hover {
+    background: black;
+    color: white;
+    transition: linear 0.2s;
+}
+
+.modal {
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    height: 450px;
+    max-height: 100%;
+    position: fixed;
+    z-index: 100;
+    right: 35px;
+    border-radius: 5px;
+    bottom: 0;
+    background: white;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.3);
+    animation-name: animate;
+    animation-duration: 0.4s
+}
+
+
+.modal_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    padding: 20px 40px 20px 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid black;
+}
+
+
+h1 {
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid black;
+}
+
+.close_button {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: 20px;
+    border: 0;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+    transition: linear 0.2s;
+    cursor: pointer;
+}
+
+.modal_input {
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+    outline: none;
+    border-top: 1px solid black;
+}
+
+
+.modal_icon {
+    z-index: 1;
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: linear .1s;
+}
+
+.modal_icon:hover {
+    transform: scale(2);
+    transition: linear .1s;
+}
+
+.close_button:hover {
+    background: lightgrey;
+    color: black;
+    transition: linear 0.2s;
+}
+
+
+.system_message {
+    width: 60%;
+}
+
+.user_message {
+    width: 60%;
+    position: relative;
+    top: 0;
+    left: 150px;
+}
+
+@keyframes animate {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+
+@media (max-width: 500px) {
+    .modal {
+        right: 0;
+    }
 }
