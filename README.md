@@ -1,1 +1,1 @@
-need to run server socket.io on 
+need to run server socket.io on https://github.com/Artur515/small-socket-server
